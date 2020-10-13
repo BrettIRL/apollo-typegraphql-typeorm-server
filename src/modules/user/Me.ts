@@ -1,6 +1,6 @@
-import { User } from 'entity/User';
+import { User } from '../../entity/User';
 import { Authorized, Ctx, Query, Resolver } from 'type-graphql';
-import { Context } from 'types/context.interface';
+import { Context } from '../../types/context.interface';
 
 @Resolver()
 export class MeResolver {

@@ -1,8 +1,8 @@
-import { createAccessToken, createRefreshToken } from 'auth';
+import { createAccessToken, createRefreshToken } from '../../auth';
 import bcrypt from 'bcryptjs';
-import { User } from 'entity/User';
+import { User } from '../../entity/User';
 import { Arg, Ctx, Mutation, Resolver } from 'type-graphql';
-import { Context } from 'types/context.interface';
+import { Context } from '../../types/context.interface';
 import { LoginInput } from './LoginInput';
 
 @Resolver()

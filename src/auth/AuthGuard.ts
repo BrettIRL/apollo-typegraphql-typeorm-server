@@ -1,6 +1,6 @@
 import Branca from 'branca';
 import { AuthChecker } from 'type-graphql';
-import { Context } from 'types/context.interface';
+import { Context } from '../types/context.interface';
 
 export const AuthGuard: AuthChecker<Context> = ({ context }) => {
   const accessToken = context.req.headers.authorization;
