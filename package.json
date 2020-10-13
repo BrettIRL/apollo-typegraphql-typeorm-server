@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "start": "ts-node-dev -r tsconfig-paths/register src/index.ts"
+    "start": "ts-node dist",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts"
   },
   "dependencies": {
     "apollo-server-express": "^2.18.2",
@@ -20,6 +21,7 @@
     "graphql": "^15.3.0",
     "pg": "^8.4.1",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.0.0",
     "type-graphql": "^1.0.0",
     "typeorm": "^0.2.27"
   },
