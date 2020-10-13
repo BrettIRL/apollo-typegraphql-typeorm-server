@@ -1,19 +1,23 @@
 import { ApolloServer } from 'apollo-server-express';
-import { AuthGuard } from 'auth/AuthGuard';
-import * as refreshController from 'auth/refreshController';
+import { AuthGuard } from './auth/AuthGuard';
+import * as refreshController from './auth/refreshController';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
-import { LoginResolver } from 'modules/user/Login';
-import { MeResolver } from 'modules/user/Me';
-import { RegisterResolver } from 'modules/user/Register';
+import { LoginResolver } from './modules/user/Login';
+import { MeResolver } from './modules/user/Me';
+import { RegisterResolver } from './modules/user/Register';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
 
 const main = async () => {
-  await createConnection();
+  try {
+    await createConnection();
+  } catch (err) {
+    console.log('Connection Error', err);
+  }
 
   const schema = await buildSchema({
     resolvers: [RegisterResolver, LoginResolver, MeResolver],

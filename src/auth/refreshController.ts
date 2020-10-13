@@ -1,6 +1,6 @@
-import { createAccessToken, createRefreshToken } from 'auth';
+import { createAccessToken, createRefreshToken } from './index';
 import Branca from 'branca';
-import { User } from 'entity/User';
+import { User } from '../entity/User';
 import { Request, Response } from 'express';
 
 export const refresh = async (req: Request, res: Response) => {
